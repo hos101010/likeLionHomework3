@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'movie#index'
   get 'new_movie' => 'movie#new_movie'
   get '/delete' => 'movie#delete'
+  get 'write_review' => 'movie#write_review'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

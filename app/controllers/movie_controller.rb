@@ -6,7 +6,6 @@ class MovieController < ApplicationController
         require('open-uri')
         
         @movie_list = List.all
-        
     end
     
     def new_movie
@@ -27,6 +26,8 @@ class MovieController < ApplicationController
         new.genre = movie_info["Genre"]
         new.released = movie_info["Released"]
         new.imgsrc = movie_info["Poster"]
+        new.review[0]="dkhfkdh"
+        #new.review = []
         new.save
         
         redirect_to '/'
@@ -36,6 +37,13 @@ class MovieController < ApplicationController
     delete_list = List.find(params[:id])
     delete_list.destroy
    
+    redirect_to '/'
+    end
+    
+    def write_review
+        review_list = List.find(params[:id])
+        review_temp= params[:review]
+        review_list.review << review_temp    
     redirect_to '/'
     end
 end

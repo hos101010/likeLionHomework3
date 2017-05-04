@@ -18,12 +18,22 @@
         <p>Title :<%= movie.title%></p>
         <p>Year : <%= movie.released%></p>
         <p>Runtime : <%= movie.runtime%></p>
+        <p>Review : <%= movie.review[1]%></p>
         <form action="/delete" method="get">
                 <textarea name="id" style="display:none;"><%= movie.id %></textarea>
                 <button type="submit" class="btn btn-primary">Delete</button>
                 
         </form>
+        
+        <form action="write_review">
+                <textarea name="id" style="display:none;"><%= movie.id %></textarea>
+                <input type="text" class="form-control" name="review" id="review" placeholder="review">
+                <button type="submit" class="btn btn-primary">review</button>
+        </form>
    </div>
 </section>
 <%end%>
 </div>
+
+
+<form action="write_review">

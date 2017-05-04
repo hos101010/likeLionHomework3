@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20170504065013) do
     t.string   "released"
     t.string   "title"
     t.string   "imgsrc"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "review",     default: "--- []\n"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end
