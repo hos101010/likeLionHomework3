@@ -1,0 +1,29 @@
+<div class="container">
+<form action="new_movie">
+  <div class="form-group">
+    <label for="title">영화를 입력하세요</label>
+    <input type="text" class="form-control" name="title" id="title" placeholder="movie title">
+    </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+<div class="container">
+<% @movie_list.each do |movie| %>
+
+<section class="row movie_table">
+    <div class="col-md-3 poster"><%= image_tag(movie.imgsrc) %> </div>
+    <div class="col-md-9 content">
+        <p>Title :<%= movie.title%></p>
+        <p>Year : <%= movie.released%></p>
+        <p>Runtime : <%= movie.runtime%></p>
+        <form action="/delete" method="get">
+                <textarea name="id"><%= movie.id %></textarea>
+                <button type="submit" class="btn btn-primary">Delete</button>
+                
+        </form>
+   </div>
+</section>
+<%end%>
+</div>
