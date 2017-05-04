@@ -19,7 +19,7 @@
         <p>Year : <%= movie.released%></p>
         <p>Runtime : <%= movie.runtime%></p>
         <form action="/delete" method="get">
-                <textarea name="id"><%= movie.id %></textarea>
+                <textarea name="id" style="display:none;"><%= movie.id %></textarea>
                 <button type="submit" class="btn btn-primary">Delete</button>
                 
         </form>
